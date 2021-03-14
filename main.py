@@ -38,7 +38,7 @@ def send_mail(to, subject, template, **kwargs):
     mail.send(msg)
 
 
-class user(db.Model):
+class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
@@ -61,8 +61,8 @@ class QueryForm(FlaskForm):
 def index():
     form = QueryForm()
     if form.validate_on_submit():
-        new_user = user(name=form.name.data, email=form.email.data,
-                         phone_number=form.phone_number.data, subject=form.subject.data, query=form.query.data)
+        new_user = User(name=form.name.data, email=form.email.data,
+                        phone_number=form.phone_number.data, subject=form.subject.data, query=form.query.data)
         db.session.add(new_user)
         db.session.commit()
         flash('Your Query Has Been Submitted Sucessfully')
