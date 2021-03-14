@@ -1,6 +1,6 @@
-New Query
-Name: {{ query.name }}
-Email: {{ query.email }}
-Phone number: {{ query.phone_number }}
-Subject: {{ query.subject }}
-Query: {{ query.query }}
+New Query has been posted
+Name: {{ name }}
+Email: {{ email }}
+Phone number: {{ phone_number }}
+Subject: {{ subject }}
+Query: {{ query }}
