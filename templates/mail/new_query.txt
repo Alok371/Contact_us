@@ -1,5 +1,6 @@
 New Query
-Name: {{ name }}
-Email: {{ email }}
-Phone number: {{ phone_number }}
-Subject: {{ subject }}
+Name: {{ query.name }}
+Email: {{ query.email }}
+Phone number: {{ query.phone_number }}
+Subject: {{ query.subject }}
+Query: {{ query.query }}
