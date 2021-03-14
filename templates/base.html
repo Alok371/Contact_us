@@ -1,0 +1,43 @@
+{% extends"home.html" %}
+{% block head %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+{% block title %}{% endblock %}
+
+{% endblock %}
+{% block content %}
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{ message }}
+</div>
+{% endfor %}
+<form method="POST">
+  <div class="wrapper">
+    <div class="title">
+      Query
+    </div>
+    {{ form.hidden_tag() }}
+    <div class="form">
+      <div class="inputfield">
+        {{ form.name.label() }}{{ form.name() }}
+      </div>
+      <div class="inputfield">
+        {{ form.email.label() }} {{ form.email() }}
+      </div>
+      <div class="inputfield">
+        {{ form.phone_number.label() }}{{ form.phone_number() }}
+      </div>
+      <div class="inputfield">
+        {{ form.subject.label() }}{{ form.subject() }}
+      </div>
+      <div class="inputfield">
+        {{ form.query.label() }}
+        {{ form.query() }}
+      </div>
+      <div class="inputfield">
+        {{ form.submit() }}
+      </div>
+    </div>
+</form>
+{% endblock %}
