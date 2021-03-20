@@ -3,15 +3,14 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 {% block title %}{% endblock %}
-
-{% endblock %}
-{% block content %}
 {% for message in get_flashed_messages() %}
 <div class="alert alert-warning">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   {{ message }}
 </div>
 {% endfor %}
+{% endblock %}
+{% block content %}
 <form method="POST">
   <div class="wrapper">
     <div class="title">
